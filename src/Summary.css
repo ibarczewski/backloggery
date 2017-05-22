@@ -1,0 +1,48 @@
+.summary {
+  background-color: #eaeaea;
+  width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.7);
+  padding: 10px 15px 10px;
+}
+
+.titleCount {
+  display: inline-block;
+  font: 10pt arial, sans-serif;
+  width: 10%;
+  position: relative;
+  top: -5px;
+}
+
+.status {
+  display: inline-block;
+  font: 10pt arial, sans-serif;
+  font-weight: bold;
+  text-align: left;
+  width: 10%;
+  position: relative;
+  top: -5px;
+}
+
+.border-container {
+  border: 1px solid;
+  width: 60%;
+  border-radius: 4px;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.progress {
+  height: 16px;
+  background-color: red !important;
+}
+
+.percentage {
+  display: inline-block;
+  font: 10pt arial, sans-serif;
+  font-weight: bold;
+  width: 10%;
+  position: relative;
+  top: -5px;
+}
