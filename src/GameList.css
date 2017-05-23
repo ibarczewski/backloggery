@@ -1,0 +1,45 @@
+.game-list {
+  background-color: #eaeaea;
+  width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.7);
+  padding: 10px 15px 10px;
+}
+
+.list-container {
+  background-color: #eaeaea;
+  width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.7);
+  padding: 10px 15px 10px;
+}
+
+.game-box {
+  font: 12pt arial, sans-serif;
+  font-weight: bold;
+  border-radius: 20px;
+  background-color: #4b4b4b;
+  color: #ffffff;
+  padding: 3px 12px 4px;
+  margin: 0px 0px 5px 0px;
+  text-align: left;
+}
+
+img {
+  position: relative;
+}
+
+.edit-button {
+  top: 1px;
+}
+
+.completion-status {
+  top: 2px;
+}
+
+.list-header {
+  background-color: #4b4b4b;
+  color: #ffffff;
+}
