@@ -18,7 +18,7 @@ class App extends Component {
       { status: 'Beaten', titleCount: 128},
       { status: 'Completed', titleCount: 4}],
     total: 159,
-    titles: [ { title: 'Batman: Arkham City'}, { title: 'Batman: Arkham Knight'}, { title: 'Catherine'}]
+    titles: [ { title: 'Batman: Arkham City', system: 'Xbox 360'}, { title: 'Batman: Arkham Knight', system: 'Xbox 360'}, { title: 'Catherine', system: 'PlayStation 3'}]
   }
 
   render() {
@@ -28,7 +28,7 @@ class App extends Component {
       <div className="App">
         <Summary summaryData={ this.testData }/>
         <GameList titles={ filteredTitles }/>
-        <GameFilter onFilterChange={ this.handleFilterChange }/>
+        <GameFilter systems={ _.chain(filteredTitles).map('system').uniq().value() } onFilterChange={ this.handleFilterChange }/>
       </div>
     );
   }
