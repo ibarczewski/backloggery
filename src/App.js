@@ -9,6 +9,7 @@ class App extends Component {
   constructor() {
     super();
     this.handleFilterChange = this.handleFilterChange.bind(this);
+    this.handleSystemChange = this.handleSystemChange.bind(this);
     this.state = { filteredTitles: this.testData.titles };
   }
 
@@ -28,7 +29,9 @@ class App extends Component {
       <div className="App">
         <Summary summaryData={ this.testData }/>
         <GameList titles={ filteredTitles }/>
-        <GameFilter systems={ _.chain(filteredTitles).map('system').uniq().value() } onFilterChange={ this.handleFilterChange }/>
+        <GameFilter systems={ _.chain(filteredTitles).map('system').uniq().value() }
+                    onFilterChange={ this.handleFilterChange }
+                    onSystemChange={ this.handleSystemChange }/>
       </div>
     );
   }
@@ -36,6 +39,14 @@ class App extends Component {
   handleFilterChange(filter) {
     var filteredTitles = _.filter(this.testData.titles, (game) => {
       return game.title.toLowerCase().includes(filter.toLowerCase());
+    });
+
+    this.setState({ filteredTitles: filteredTitles });
+  }
+
+  handleSystemChange(filter) {
+    var filteredTitles = _.filter(this.testData.titles, (game) => {
+      return filter.includes(game.system);
     });
 
     this.setState({ filteredTitles: filteredTitles });

@@ -3,15 +3,17 @@ import './GameFilter.css';
 import * as _ from 'lodash';
 
 class GameFilter extends Component {
+
   constructor(props) {
     super(props);
     this.state = {value: '', systemFilter: []};
     this.handleChange = this.handleChange.bind(this);
     this.handleCheckChange = this.handleCheckChange.bind(this);
+    this.sysList = this.props.systems;
   }
 
   render() {
-    var systemList = this.props.systems.map((system) =>
+    var systemList = this.sysList.map((system) =>
       <div>
         <input type="checkbox" name={system} key={system} onChange={this.handleCheckChange} />
         <label>{system}</label>
@@ -42,6 +44,8 @@ class GameFilter extends Component {
     } else {
       newFilter.push(e.target.name);
     }
+
+    this.props.onSystemChange(newFilter);
     this.setState({systemFilter: newFilter});
   }
 }
